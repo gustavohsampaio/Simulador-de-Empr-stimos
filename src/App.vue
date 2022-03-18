@@ -41,7 +41,7 @@
 
         <div class="col-4">
 
-            <div class="bg-white text-xl text-center p-6" id="infoParcela">
+            <div class="bg-white text-xl text-center p-5" id="infoParcela">
 
                 <div>Valor da parcela:</div>
 
@@ -49,7 +49,7 @@
 
                 <p class="text-lg mt-8">Prazo para pagamento:</p>
 
-                <p class="text-lg font-bold">Amortização: TABELA PRICE</p>
+                <p class="text-lg font-bold mt-6">Amortização: TABELA PRICE</p>
 
                 <p class="text-justify text-lg text-600 ">
                     A taxa de juros varia a partir de 0.99% ao mês, dependendo do tipo de
@@ -83,7 +83,6 @@ export default {
 
     #formulario {
         max-width: 900px;
-        --border-radius: 5px;
     }
 
     #total {
@@ -93,6 +92,8 @@ export default {
 
     #infoParcela{
         border: 1px solid #ced4da;
+        border-radius: 10px;
+        
     }
 
 </style>
