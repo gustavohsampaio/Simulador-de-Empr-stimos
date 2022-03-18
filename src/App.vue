@@ -79,7 +79,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 
     #formulario {
         max-width: 900px;
