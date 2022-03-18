@@ -1,0 +1,32 @@
+//Suggested location to add your overrides so that migration would be easy by just updating the SASS folder in the future
+
+.field label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.w-full .p-inputnumber-input {
+    max-width: 100%;
+}
+
+.p-confirm-popup .p-confirm-popup-content {
+    max-width: 400px;
+}
+
+.p-dialog .p-dialog-header {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.p-dialog .p-dialog-content {
+    overflow: hidden;
+}
+
+.center-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 10000;
+}
