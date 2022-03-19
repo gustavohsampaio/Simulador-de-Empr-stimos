@@ -1,9 +1,10 @@
 <template>
-  <div id="formulario" class="grid w-full m-auto mt-4">
+<div>
+  <div id="formulario" class="grid w-full m-auto mt-4 card">
     <div class="col-8">
       <div class="field">
-        <label for="nome"
-          >Valor do Empréstimo<sup class="text-pink-500 text-lg">*</sup></label
+        <label class="text-lg" for="nome"
+          >Valor do Empréstimo<sup class="text-pink-500 text-xl">*</sup></label
         >
         <InputNumber
           v-model="emprestimo"
@@ -16,8 +17,8 @@
       </div>
 
       <div class="field">
-        <label for="nome"
-          >Valor do Imóvel <sup class="text-pink-500 text-lg">*</sup></label
+        <label class="text-lg" for="nome"
+          >Valor do Imóvel <sup class="text-pink-500 text-xl">*</sup></label
         >
         <InputNumber
           v-model="imovel"
@@ -30,8 +31,9 @@
       </div>
 
       <div class="field">
-        <label for="nome">Quantidade de meses</label>
+        <label class="text-lg" for="nome">Quantidade de meses</label>
         <Slider class="mt-3 ml-2" v-model="qtdMeses" :min="1" :max="120" />
+        <div class="text-center mt-3 text-lg">{{ qtdMeses }} Meses</div>
       </div>
 
       <div class="mt-8">
@@ -44,7 +46,7 @@
     </div>
 
     <div class="col-4">
-      <div class="bg-white text-xl text-center p-5" id="infoParcela">
+      <div :class="total!=0?'bg-white text-xl text-center p-5 foco':'bg-white text-xl text-center p-5'" id="infoParcela">
         <div>Valor da parcela:</div>
 
         <div id="total" class="text-3xl mt-1">
@@ -59,7 +61,7 @@
         <p class="text-lg mt-4">Prazo para pagamento:</p>
 
         <div>
-          {{ qtdMeses }} Meses
+          {{ parcelas }} Meses
         </div>
 
         <p class="text-lg font-bold mt-6">Amortização: TABELA PRICE</p>
@@ -73,6 +75,7 @@
     </div>
   </div>
   <Toast position="top-right" />
+</div>
 </template> 
 
 <script>
@@ -83,6 +86,7 @@ export default {
       emprestimo: 0,
       imovel: 0,
       qtdMeses: 48,
+      parcelas: 0,
       total: 0,
       camposErros: [],
     };
@@ -106,6 +110,7 @@ export default {
       }
       
       else {
+        this.parcelas = this.qtdMeses;
         if (this.imovel <= 100000) {
           this.total = (this.emprestimo / this.qtdMeses) * 1.01;
         } else if (this.imovel > 1000000) {
@@ -123,6 +128,7 @@ export default {
 <style lang="scss" scoped>
 #formulario {
   max-width: 900px;
+  border-radius: 10px;
 }
 
 #total {
@@ -132,5 +138,9 @@ export default {
 #infoParcela {
   border: 1px solid #ced4da;
   border-radius: 10px;
+}
+
+.foco {
+  box-shadow: 1px 1px 10px 5px #ccc8c8;
 }
 </style>
