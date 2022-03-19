@@ -8,6 +8,13 @@ Criação de interface web para simulação de empréstimos para aquisição de 
 - Vue.js
 - JavaScript
 
+# 💻 Design Web
+
+![simulador-atualizado](https://user-images.githubusercontent.com/93945597/159105827-2665a09b-e931-4c1f-b0d5-2b7b0ccc2ef2.gif)
+
+
+
+
 # :gear: Instruções para visualizar o projeto
 ```
 npm install
