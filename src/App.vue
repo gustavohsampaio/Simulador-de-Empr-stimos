@@ -4,13 +4,12 @@
     <div class="col-8">
       <div class="field">
         <label class="text-lg" for="nome"
-          >Valor do Empréstimo<sup class="text-pink-500 text-xl">*</sup></label
-        >
+          >Valor do Empréstimo<sup class="text-pink-500 text-xl">*</sup></label>
         <InputNumber
           v-model="emprestimo"
           mode="currency"
           currency="BRL"
-          placeholder="R$ 100.000,00"
+          placeholder="Ex: R$ 100.000,00"
           :class="camposErros.indexOf('emprestimo')!=-1?'w-full p-invalid':'w-full'"
           locale="pt-BR"
         />
@@ -18,13 +17,12 @@
 
       <div class="field">
         <label class="text-lg" for="nome"
-          >Valor do Imóvel <sup class="text-pink-500 text-xl">*</sup></label
-        >
+          >Valor do Imóvel <sup class="text-pink-500 text-xl">*</sup></label>
         <InputNumber
           v-model="imovel"
           mode="currency"
           currency="BRL"
-          placeholder="R$ 700.000,00"
+          placeholder="Ex: R$ 700.000,00"
           :class="camposErros.indexOf('imovel')!=-1?'w-full p-invalid':'w-full'"
           locale="pt-BR"
         />
@@ -126,21 +124,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#formulario {
-  max-width: 900px;
-  border-radius: 10px;
-}
+  #formulario {
+    max-width: 900px;
+    border-radius: 10px;
+  }
 
-#total {
-  border-bottom: 1px solid rgb(190 185 185);
-}
+  #total {
+    border-bottom: 1px solid rgb(190 185 185);
+  }
 
-#infoParcela {
-  border: 1px solid #ced4da;
-  border-radius: 10px;
-}
+  #infoParcela {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+  }
 
-.foco {
-  box-shadow: 1px 1px 10px 5px #ccc8c8;
-}
+  .foco {
+    box-shadow: 1px 1px 10px 5px #ccc8c8;
+  }
 </style>
